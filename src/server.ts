@@ -41,6 +41,7 @@ io.on("connection", (socket: any) => {
 
   //Canal para repassar os dados de doação
   socket.on("processor_pass_on_data", async (param: ParamProps) => {
+    console.log(param)
     const middleware = await validHash(param.data);
     const hasKeyHub = param.hasOwnProperty("keyHub");
     const hasChannel = param.hasOwnProperty("channel");
